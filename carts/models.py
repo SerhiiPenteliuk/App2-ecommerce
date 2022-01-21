@@ -1,6 +1,5 @@
 from django.db import models
 
-
 # Create your models here.
 from store.models import Product
 
@@ -18,6 +17,9 @@ class CartItem(models.Model):
     cart = models.ForeignKey(Cart, on_delete=models.CASCADE)
     quantity = models.IntegerField()
     is_active = models.BooleanField(default=True)
+
+    def sub_total(self):
+        return self.product.price * self.quantity
 
     def __str(self):
         return self.product
