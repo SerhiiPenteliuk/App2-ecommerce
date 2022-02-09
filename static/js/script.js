@@ -55,7 +55,7 @@ $(document).ready(function() {
 
 
     
-}); 
+});
 // jquery end
 
 setTimeout(function (){
